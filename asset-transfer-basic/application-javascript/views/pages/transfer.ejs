@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <br>
+        <h1>Ledger Demo</h1>
+        <h2>Transfer Asset</h2>  
+        <br>
+        
+        <%if(success.length > 1){%>
+            <div class="bg-success-subtle p-2 mb-3">
+            <br>
+                <p><%=success%></p>
+            
+            </div>
+        <%}%>
+
+        <%if(success.length == 1){%>
+            <div class="bg-success-subtle p-2 mb-3">
+                <br>
+                <p>Asset not found</p>
+            </div>
+        <% } %>
+
+        <form class="bg-success-subtle p-3 mb-3" method="POST" action="/transfer_a">
+            
+            <div class="mb-3">
+                <label for="input1" class="form-label">Name Asset:</label>
+                <input type="text" class="form-control" id="input1" placeholder="asset13" name="input1" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="input1" class="form-label">New Owner:</label>
+                <input type="text" class="form-control" id="input1" placeholder="Tom" name="input2" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Transfer</button>      
+        </form>
+
+
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

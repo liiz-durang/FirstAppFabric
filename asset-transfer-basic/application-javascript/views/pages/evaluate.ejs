@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <br>
+        <h1>Ledger Demo</h1>
+        <h2>Evaluate Asset</h2>  
+        <br>
+        
+        <form class="bg-success-subtle p-3 mb-3" method="POST" action="/evaluate_a">
+            
+            <div class="mb-3">
+                <label for="input1" class="form-label">Name Asset:</label>
+                <input type="text" class="form-control" id="input1" placeholder="asset13" name="input1" required>
+            </div>
+
+            
+            <button type="submit" class="btn btn-primary">Evaluate</button>      
+        </form>
+
+        <%if(answer.length > 0){%>
+            <div class="bg-success-subtle p-2 mb-3">
+            <br>
+                <p><%=answer%></p>
+            
+            </div>
+
+        <% } %>
+
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

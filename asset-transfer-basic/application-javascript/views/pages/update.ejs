@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <br>
+        <h1>Ledger Demo</h1>
+        <h2>Update Asset</h2>  
+        <br>
+        <%if(success.length > 1){%>
+            <div class="bg-success-subtle p-2 mb-3">
+            <br>
+                <p><%=success%></p>
+            
+            </div>
+        <%}%>
+
+        <%if(success.length == 1){%>
+            <div class="bg-success-subtle p-2 mb-3">
+                <br>
+                <p>Asset not found</p>
+            </div>
+        <% } %>
+        <form class="bg-success-subtle p-3 mb-3" method="POST" action="/update_a">
+            
+            <div class="mb-3">
+                <label for="input1" class="form-label">Name Asset:</label>
+                <input type="text" class="form-control" id="input1" placeholder="Asset13" name="input1" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="input2" class="form-label">Owner:</label>
+                <input type="text" class="form-control" id="input2" placeholder="Tom" name="input2" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="input3" class="form-label">Color:</label>
+                <input type="text" class="form-control" id="input3" placeholder="yellow" name="input3" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="input4" class="form-label">Size:</label>
+                <input type="text" class="form-control" id="input4" placeholder="5" name="input4" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="input5" class="form-label">AppraisedValue:</label>
+                <input type="text" class="form-control" id="input5" placeholder="1300" name="input5" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Update</button>      
+        </form>
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

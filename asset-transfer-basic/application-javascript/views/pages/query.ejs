@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <br>
+        <h1>Ledger Demo</h1>
+        <h2>All Assets</h2>  
+        <br>
+
+        <form class="p-2 mb-3" method="POST" action="/query_a">
+            <button type="submit" class="btn btn-primary">Refresh</button>   
+        </form>
+        
+        <% for(var i=0; i<list.length; i++) { %>
+        <div class="bg-success-subtle p-3 mb-3">
+                        
+            <p><b> ID: </b> <%= list[i].ID %></p>
+            <p> <b> Owner: </b> <%= list[i].Owner %></p>
+            <p> <b> Color: </b> <%= list[i].Color %></p>
+            <p> <b> Size: </b> <%= list[i].Size %></p>
+            <p> <b> AppraisedValue: </b><%= list[i].AppraisedValue %></p>
+            
+            
+                    
+        </div>
+        <% } %>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>
